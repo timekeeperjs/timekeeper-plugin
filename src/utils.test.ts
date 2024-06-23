@@ -17,7 +17,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -34,7 +34,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -51,7 +51,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -69,7 +69,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'production'
       };
 
@@ -82,7 +82,7 @@ describe('Utility Functions', () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          baseUrl: 'https://cdn.example.com',
+          baseUrl: 'https://cdn.example.com/',
           remoteName: 'testRemote',
           version: '1.0.0'
         })
@@ -94,7 +94,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'production'
       };
 
@@ -114,7 +114,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'development'
       };
 
@@ -129,7 +129,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -137,7 +137,7 @@ describe('Utility Functions', () => {
       fetchMock.mockResponseOnce(JSON.stringify({ version: '1.0.0' }));
 
       const result = await getRemoteEntryVite(options);
-      expect(result).toBe('https://cdn.example.com1.0.0.remoteEntry.js');
+      expect(result).toBe('https://cdn.example.com/1.0.0.remoteEntry.js');
     });
 
     it('should return the fallback URL on slow api fetch', async () => {
@@ -145,7 +145,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -162,7 +162,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         fallbackUrl: 'https://fallback.example.com',
         timeout: 3000
       };
@@ -180,7 +180,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'production'
       };
 
@@ -193,7 +193,7 @@ describe('Utility Functions', () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          baseUrl: 'https://cdn.example.com',
+          baseUrl: 'https://cdn.example.com/',
           remoteName: 'testRemote',
           version: '1.0.0'
         })
@@ -205,7 +205,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'production'
       };
 
@@ -225,7 +225,7 @@ describe('Utility Functions', () => {
         remoteName: 'testRemote',
         version: '1.0.0',
         apiUrl: 'https://api.example.com',
-        baseUrl: 'https://cdn.example.com',
+        baseUrl: 'https://cdn.example.com/',
         environment: 'development'
       };
 

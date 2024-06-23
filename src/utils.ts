@@ -5,7 +5,7 @@ export const getRemoteEntryVite = async (options: GetRemoteEntryOptions): Promis
 
   try {
     const result = await Promise.race([
-      fetch(`${apiUrl}?remoteName=${remoteName}&version=${version}`)
+      fetch(`${apiUrl}/get-remote?remoteName=${remoteName}&version=${version}`)
         .then(response => {
           if (!response.ok) throw new Error('Network response was not ok.');
           return response.json();
@@ -56,27 +56,26 @@ export const getRemoteEntryWebpack = async (options: GetRemoteEntryOptions): Pro
 
   try {
     const result = await Promise.race([
-      fetch(`${apiUrl}?remoteName=${remoteName}&version=${version}`)
+      fetch(`${apiUrl}/get-remote?remoteName=${remoteName}&version=${version}`)
         .then(response => {
           if (!response.ok) throw new Error('Network response was not ok.');
           return response.json();
         })
         .then(async data => {
           const version = data.version;
-          const fileName = `${baseUrl}/${version}.remoteEntry.js`;
+          const fileName = `${baseUrl}${version}.remoteEntry.js`;
 
           const fileResponse = await fetch(fileName);
           if (!fileResponse.ok) throw new Error('Failed to fetch remote entry file.');
 
           const fileContent = await fileResponse.text();
-          console.log("fileContent", fileContent);
 
           const variableNameMatch = fileContent.match(/var\s+(\w+)\s*;/);
           if (variableNameMatch) {
             const variableName = variableNameMatch[1];
-            return `${variableName}@${baseUrl}/${version}.remoteEntry.js`;
+            return `${variableName}@${baseUrl}${version}.remoteEntry.js`;
           } else {
-            throw new Error('Variable name not found in the file content.');
+            return `${remoteName}@${baseUrl}${version}.remoteEntry.js`;
           }
         }),
       new Promise<string>((resolve) =>
