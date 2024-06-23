@@ -1,0 +1,31 @@
+{
+  "name": "timekeeper-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitest/ui": "^1.6.0",
+    "jest-fetch-mock": "^3.0.3",
+    "typescript": "^5.5.2",
+    "vitest-fetch-mock": "^0.2.2",
+    "webpack": "^5.92.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "@types/node-fetch": "^2.6.11",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "prettier": "^3.3.2",
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
+  }
+}
