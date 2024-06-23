@@ -12,7 +12,6 @@ const minutes = current.getMinutes().toString().padStart(2, '0');
 
 const moduleVersion = `${year}_${month}_${day}__${hours}_${minutes}`;
 
-// https://vitejs.dev/config/
 export default defineConfig(async () => {
   return {
     plugins: [
@@ -31,10 +30,11 @@ export default defineConfig(async () => {
               apiUrl: 'http://localhost:8080',
               baseUrl: 'http://localhost:7777/file/',
               fallbackUrl: 'http://localhost:7777/file/2024_06_19__13_47.remoteEntry.js',
-              timeout: 0
+              timeout: 5000
             }),
             format: "var",
-            externalType: "url"
+            externalType: "url",
+            from: "webpack"
           },
         },
         shared: ['react', 'react-dom'],
