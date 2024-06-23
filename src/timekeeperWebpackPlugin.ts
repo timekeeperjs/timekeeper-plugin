@@ -1,6 +1,6 @@
 import { Compiler } from 'webpack';
 import { GetRemoteEntryOptions, PushRemoteEntryOptions } from './types/options';
-import { getRemoteEntryWebpack, pushRemoteEntryWebpack } from './utils'
+import { getRemoteEntryWebpack, pushRemoteEntryWebpack } from './utils';
 
 class TimekeeperWebpackPlugin {
   constructor() { }
@@ -20,4 +20,4 @@ class TimekeeperWebpackPlugin {
   }
 }
 
-module.exports = TimekeeperWebpackPlugin;
+export default TimekeeperWebpackPlugin;

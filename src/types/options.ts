@@ -1,11 +1,3 @@
-// export type TimekeeperVitePluginOptions {
-
-// }
-
-// export type GetRemoteEntryOptions {
-
-// }
-
 /**
 * Options for getting the remote entry URL.
 */
