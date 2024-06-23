@@ -72,6 +72,7 @@ module.exports = async (env, argv) => {
         //     timeout: 5000
         //   }),
         // },
+        // remoteType: "module",
         shared: {
             ...deps,
             react: { eager: true },
