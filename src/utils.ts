@@ -29,7 +29,7 @@ export const pushRemoteEntryVite = async (options: PushRemoteEntryOptions): Prom
   if (environment === 'development') return
 
   try {
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`${apiUrl}/push-remote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ export const pushRemoteEntryWebpack = async (options: PushRemoteEntryOptions): P
   if (environment === 'development') return;
 
   try {
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`${apiUrl}/push-remote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

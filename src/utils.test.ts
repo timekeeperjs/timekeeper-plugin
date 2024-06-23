@@ -76,7 +76,7 @@ describe('Utility Functions', () => {
       fetchMock.mockResponseOnce(JSON.stringify({ success: true }));
 
       await pushRemoteEntryWebpack(options);
-      expect(fetchMock).toHaveBeenCalledWith('https://api.example.com', expect.objectContaining({
+      expect(fetchMock).toHaveBeenCalledWith('https://api.example.com/push-remote', expect.objectContaining({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -187,7 +187,7 @@ describe('Utility Functions', () => {
       fetchMock.mockResponseOnce(JSON.stringify({ success: true }));
 
       await pushRemoteEntryVite(options);
-      expect(fetchMock).toHaveBeenCalledWith('https://api.example.com', expect.objectContaining({
+      expect(fetchMock).toHaveBeenCalledWith('https://api.example.com/push-remote', expect.objectContaining({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
